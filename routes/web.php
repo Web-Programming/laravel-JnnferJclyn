@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KurikulumController;
+use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -82,3 +84,12 @@ Route::get('/fakultas', function () {
     $kampus = "Universitas Multi Data Palembang";
     return view('fakultas.index', compact ('fakultas', 'kampus'));
 });
+
+Route::get('/prodi', [ProdiController::class,'index']);
+
+Route::resource("/kurikulum", KurikulumController::class);
+
+//tes di browser dengan mengunjungi :
+// http://localhost:8080/kurikulum/
+
+Route::apiResource("/dosen", DosenController::class);
