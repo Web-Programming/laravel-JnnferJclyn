@@ -25,17 +25,17 @@ Route::get('/profil', function () {
 });
 
 //route dengan parameter {wajib}
-Route::get('/mahasiswa/{nama}', function ($nama = "Jenni") {
+Route::get('/mahasiswa/{nama}', function ($nama = "Jennifer") {
     echo "<h2>Halo Nama Saya $nama</h2>";
 });
 
 //route dengan parameter {tidak wajib}
-Route::get('/mahasiswa2/{nama?}', function ($nama = "Jenni") {
+Route::get('/mahasiswa2/{nama?}', function ($nama = "Jennifer") {
     echo "<h2>Halo Nama Saya $nama</h2>";
 });
 
 //route dengan parameter > 1
-Route::get('/profil/{nama?}/{pekerjaan?}', function ($nama = "Jenni", $pekerjaan = "Mahasiswa") {
+Route::get('/profil/{nama?}/{pekerjaan?}', function ($nama = "Jennifer", $pekerjaan = "Mahasiswa") {
     echo "<h2>Halo Nama Saya $nama. Saya adalah $pekerjaan</h2>";
 });
 
