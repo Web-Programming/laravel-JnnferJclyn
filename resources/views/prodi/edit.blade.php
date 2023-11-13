@@ -15,8 +15,8 @@
                 @csrf
                 <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" name="nama" id="nama" class="form-control"
-                        value="{{ old('nama') ?? $prodi->nama }}">
+                    <input type="text" name="name" id="name" class="form-control"
+                        value="{{ old('name') ?? $prodi->name }}">
                     @error('nama')
                         <div class="text-danger"> {{ $message }} </div>
                     @enderror

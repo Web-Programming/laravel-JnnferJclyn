@@ -19,10 +19,10 @@ class prodiController extends Controller
         //$prodis = Prodi::all();
         $prodis = Prodi::with('mahasiswas')->get();
         foreach ($prodis as $prodi){
-            echo "<h3>{$prodi->nama}</h3>";
+            echo "<h3>{$prodi->name}</h3>";
             echo "<hr>Mahasiswa :  ";
             foreach ($prodi->mahasiswas as $mhs){
-                echo $mhs->nama . ", ";
+                echo $mhs->name . ", ";
             }
             echo "<hr>";
         }
@@ -36,17 +36,17 @@ class prodiController extends Controller
         // echo $request->nama;
 
         $validateData = $request->validate([
-            'nama' => 'required|min:5|max:20',
+            'name' => 'required|min:5|max:20',
         ]);
         // dump($validateData);
         // echo $validateData['nama'];
 
         $prodi = new Prodi(); //buat objek prodi
-        $prodi->nama = $validateData['nama']; //simpna nilai input ke properti nama prodi
+        $prodi->name = $validateData['name']; //simpna nilai input ke properti nama prodi
         $prodi->save();
 
         //return "Data prodi $prodi->nama berhasil disimpan ke database"; //tampilkan pesan berhasil
-        session()->flash('info', "Data prodi $prodi->nama berhasil disimpan ke database");
+        session()->flash('info', "Data prodi $prodi->name berhasil disimpan ke database");
         return redirect()->route('prodi.index');
     }
 
@@ -65,12 +65,18 @@ class prodiController extends Controller
 
     public function update(Request $request, Prodi $prodi){
         $validateData = $request->validate([
-            'nama'=> 'required|min:5|max:20',
+            'name'=> 'required|min:5|max:20',
             ]);
 
             Prodi::where('id', $prodi->id)->update($validateData);
-            session()->flash('info',"Data prodi $prodi->nama berhasil diubah");
+            session()->flash('info',"Data prodi $prodi->name berhasil diubah");
             return redirect()->route('prodi.index');
+    }
+
+    public function destroy(Prodi $prodi){
+        $prodi->delete();
+        return redirect()->route('prodi.index')
+        ->with("info","Prodi $prodi->name berhasil dihapus");
     }
 
 }
