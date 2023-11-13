@@ -8,10 +8,11 @@ class KurikulumController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        echo"Ini Halaman Index";
     }
 
     /**
@@ -19,7 +20,7 @@ class KurikulumController extends Controller
      */
     public function create()
     {
-        echo "Halaman create kurikulum";
+        echo"Ini Halaman Create";
     }
 
     /**
@@ -27,7 +28,7 @@ class KurikulumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo"Ini Halaman Store";
     }
 
     /**
@@ -35,7 +36,7 @@ class KurikulumController extends Controller
      */
     public function show(string $id)
     {
-        //
+        echo"Ini Halaman Show dengan ID" .$id;
     }
 
     /**
@@ -43,7 +44,7 @@ class KurikulumController extends Controller
      */
     public function edit(string $id)
     {
-        echo "Halaman edit kurikulum dengan id" .$id;
+        echo"Ini Halaman Edit dengan ID" .$id;
     }
 
     /**
