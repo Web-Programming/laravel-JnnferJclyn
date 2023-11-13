@@ -46,8 +46,8 @@ class prodiController extends Controller
         $prodi->save();
 
         //return "Data prodi $prodi->nama berhasil disimpan ke database"; //tampilkan pesan berhasil
-        $request->session()->flash('info', "Data prodi $prodi->nama berhasil disimpan ke database");
-        return redirect('prodi/create');
+        session()->flash('info', "Data prodi $prodi->nama berhasil disimpan ke database");
+        return redirect()->route('prodi.index');
     }
 
     public function index(){
@@ -69,8 +69,8 @@ class prodiController extends Controller
             ]);
 
             Prodi::where('id', $prodi->id)->update($validateData);
-            $request->session()->flash('info',"Data prodi $prodi->nama berhasil diubah");
-            return redirect('prodi/index');
+            session()->flash('info',"Data prodi $prodi->nama berhasil diubah");
+            return redirect()->route('prodi.index');
     }
 
 }
