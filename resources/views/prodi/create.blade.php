@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+=======
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+>>>>>>> ef60bcfd32d8292702b3431af3f951ae788971ac
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -25,9 +29,15 @@
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama</label>
+<<<<<<< HEAD
                         <input type="text" name="nama" id="nama" class="form-control"
                             value="{{ old('nama') }}">
                         @error('nama')
+=======
+                        <input type="text" name="name" id="name" class="form-control"
+                            value="{{ old('name') }}">
+                        @error('name')
+>>>>>>> ef60bcfd32d8292702b3431af3f951ae788971ac
                             <div class="text-danger"> {{ $message }} </div>
                         @enderror
                     </div>

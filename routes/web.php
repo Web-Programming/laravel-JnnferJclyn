@@ -33,13 +33,21 @@ Route::get('/profile', function () {
 // });
 
 // //Parameter opsional/tidak wajib diisi ditandai dengan ? di belakang nama parameter, lalu di dalam function diberi default parameter
+<<<<<<< HEAD
 // Route::get('/mahasiswa/{nama?}', function ($nama = 'christy'){
+=======
+// Route::get('/mahasiswa/{nama?}', function ($nama = 'jennifer'){
+>>>>>>> ef60bcfd32d8292702b3431af3f951ae788971ac
 //     echo "<h2>Halo semua</h2>";
 //     echo "Nama saya $nama";
 // });
 
 //klo ada lebih dari 1 parameter
+<<<<<<< HEAD
 // Route::get('/mahasiswa/{nama?}/{pekerjaan?}', function ($nama = 'christy', $pekerjaan = 'mahasiswa'){
+=======
+// Route::get('/mahasiswa/{nama?}/{pekerjaan?}', function ($nama = 'jennifer', $pekerjaan = 'mahasiswa'){
+>>>>>>> ef60bcfd32d8292702b3431af3f951ae788971ac
 //     echo "<h2>Halo semua</h2>";
 //     echo "Nama saya $nama, sebagai $pekerjaan";
 // });
@@ -89,6 +97,7 @@ Route::get('/prodi', [prodiController::class, 'index']);
 Route::resource('/kurikulum', KurikulumController::class);
 
 Route::apiResource('/dosen', DosenController::class);
+<<<<<<< HEAD
 
 //tes dgn :
 //http://localhost:8000/kurikulum
@@ -108,4 +117,38 @@ Route::get('/mahasiswa/all-join-elq', [MahasiswaController::class, 'allJoinElq']
 
 Route::get('/prodi/create', [ProdiController::class, 'create']);
 Route::post('prodi/store', [ProdiController::class, 'store']);
+=======
+
+//tes dgn :
+//http://localhost:8000/kurikulum
+//http://localhost:8000/kurikulum/create
+//http://localhost:8000/kurikulum/1000
+//http://localhost:8000/kurikulum/1000/edit
+
+
+Route::get('/mahasiswa/insert-elq', [MahasiswaController::class, 'insertElq']);
+Route::get('/mahasiswa/update-elq', [MahasiswaController::class, 'updateElq']);
+Route::get('/mahasiswa/delete-elq', [MahasiswaController::class, 'deleteElq']);
+Route::get('/mahasiswa/select-elq', [MahasiswaController::class, 'selectElq']);
+
+Route::get('/prodi/all-join-facade', [ProdiController::class, 'allJoinFacade']);
+Route::get('/prodi/all-join-elq', [ProdiController::class, 'allJoinElq']);
+Route::get('/mahasiswa/all-join-elq', [MahasiswaController::class, 'allJoinElq']);
+
+Route::get('/prodi/create', [ProdiController::class, 'create'])->name('prodi.create');
+Route::post('prodi/store', [ProdiController::class, 'store'])->name('prodi.store');
+
+Route::get('/prodi', [ProdiController::class,'index'])->name('prodi.index');
+
+
+Route::get('/prodi/{prodi}', [ProdiController::class, 'show'])->name('prodi.show');
+
+Route::get('/prodi/{prodi}/edit', [ProdiController::class, 'edit'])->name('prodi.edit');
+Route::patch('/prodi/{prodi}', [ProdiController::class, 'update'])->name('prodi.update');
+
+Route::delete('/prodi/{prodi}', [ProdiController::class, 'destroy'])->name('prodi.destroy');
+
+
+
+>>>>>>> ef60bcfd32d8292702b3431af3f951ae788971ac
 
