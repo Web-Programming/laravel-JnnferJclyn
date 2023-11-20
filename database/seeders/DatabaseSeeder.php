@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\prodi;
+
+use App\Models\Prodi;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,31 +15,25 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
+        Prodi::create(
+            [
+                'nama' => 'Teknik Informatika'
+            ]
+        );
+        Prodi::create(
+            [
+                'nama'=> 'Manajemen Informatika'
+            ]
+        );
+        Prodi::create(
+            [
+                'nama'=> 'Sistem Informasi'
+            ]
+        );
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-    prodi::create(
-        [
-            'name' => 'Tehnik Informatika'
-        ]
-    );
-
-     prodi::create(
-        [
-            'name' => 'Manajemen Informatika'
-        ]
-    );
-
-    prodi::create(
-        [
-            'name' => 'Sistem Informasi'
-        ]
-    );
     }
-
-   
-    
 }

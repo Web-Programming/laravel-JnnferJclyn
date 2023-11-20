@@ -1,4 +1,3 @@
-
 @extends('layout.master')
 @section('title', 'Halaman Mahasiswa')
 
@@ -18,10 +17,9 @@
         <tr>
           <td>{{$item->npm}}</td>
           <td>{{$item->nama}}</td>
-          <td>{{$item->prodi->name}}</td>
+          <td>{{$item->prodi->nama}}</td>
         </tr>
     @endforeach
   </tbody>
 </table>
 @endsection
-

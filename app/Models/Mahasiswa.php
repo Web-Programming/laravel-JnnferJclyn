@@ -4,20 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-// jika nama table berbeda
+
 class Mahasiswa extends Model
 {
     use HasFactory;
-
+    //jika nama tabel berbeda
     protected $table = "mahasiswas";
 
-    // untuk mengatur kolom yang boleh di isi saat masi insert
-    // protected $fillable = ['npm','nama'];
+    //mengatur yg harus diisi
+    protected $fillable = [
+        'npm', 'nama', 'tempat_lahir', 'tanggal_lahir'
+    ];
 
-    // protected $guard = [];
+    //mengatur yg tidak perlu diisi
+    protected $guarded = [];
 
-    public function prodi()
-    {
+    public function prodi(){
         return $this->belongsTo('App\Models\Prodi');
     }
 }
